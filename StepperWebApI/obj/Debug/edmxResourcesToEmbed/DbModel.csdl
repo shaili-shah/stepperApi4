@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BankDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IFSC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PanCardNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AadharCardNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DetailId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Detail" Relationship="Self.FK_BankDetails_Details" FromRole="BankDetails" ToRole="Details" />
+  </EntityType>
+  <EntityType Name="CurrentStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CTC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkingFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DetailId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Detail" Relationship="Self.FK_CurrentStatus_Details" FromRole="CurrentStatus" ToRole="Details" />
+  </EntityType>
+  <EntityType Name="Detail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileId" Type="Int32" />
+    <NavigationProperty Name="BankDetails" Relationship="Self.FK_BankDetails_Details" FromRole="Details" ToRole="BankDetails" />
+    <NavigationProperty Name="CurrentStatus" Relationship="Self.FK_CurrentStatus_Details" FromRole="Details" ToRole="CurrentStatus" />
+    <NavigationProperty Name="File" Relationship="Self.FK_Details_File" FromRole="Details" ToRole="File" />
+    <NavigationProperty Name="EducationDetails" Relationship="Self.FK_EducationDetails_Details" FromRole="Details" ToRole="EducationDetails" />
+    <NavigationProperty Name="ExprienceDetails" Relationship="Self.FK_ExprienceDetail_Details" FromRole="Details" ToRole="ExprienceDetail" />
+    <NavigationProperty Name="ProfessionalDetails" Relationship="Self.FK_ProfessionalDetail_Details" FromRole="Details" ToRole="ProfessionalDetail" />
+  </EntityType>
+  <EntityType Name="EducationDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="University" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassedOn" Type="DateTime" Precision="3" />
+    <Property Name="Grade" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DetailId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Detail" Relationship="Self.FK_EducationDetails_Details" FromRole="EducationDetails" ToRole="Details" />
+  </EntityType>
+  <EntityType Name="ExprienceDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CTC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="From" Type="DateTime" Precision="3" />
+    <Property Name="To" Type="DateTime" Precision="3" />
+    <Property Name="DetailId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Detail" Relationship="Self.FK_ExprienceDetail_Details" FromRole="ExprienceDetail" ToRole="Details" />
+  </EntityType>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContentType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Data" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Details" Relationship="Self.FK_Details_File" FromRole="File" ToRole="Details" />
+    <NavigationProperty Name="ProfessionalDetails" Relationship="Self.FK_ProfessionalDetail_File" FromRole="File" ToRole="ProfessionalDetail" />
+  </EntityType>
+  <EntityType Name="ProfessionalDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Month" Type="Int32" />
+    <Property Name="SkillIds" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DetailId" Type="Int32" Nullable="false" />
+    <Property Name="FileId" Type="Int32" />
+    <NavigationProperty Name="Detail" Relationship="Self.FK_ProfessionalDetail_Details" FromRole="ProfessionalDetail" ToRole="Details" />
+    <NavigationProperty Name="File" Relationship="Self.FK_ProfessionalDetail_File" FromRole="ProfessionalDetail" ToRole="File" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BankDetails_Details">
+    <End Role="Details" Type="Self.Detail" Multiplicity="1" />
+    <End Role="BankDetails" Type="Self.BankDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BankDetails">
+        <PropertyRef Name="DetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CurrentStatus_Details">
+    <End Role="Details" Type="Self.Detail" Multiplicity="1" />
+    <End Role="CurrentStatus" Type="Self.CurrentStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CurrentStatus">
+        <PropertyRef Name="DetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_File">
+    <End Role="File" Type="Self.File" Multiplicity="0..1" />
+    <End Role="Details" Type="Self.Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Details">
+        <PropertyRef Name="FileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EducationDetails_Details">
+    <End Role="Details" Type="Self.Detail" Multiplicity="1" />
+    <End Role="EducationDetails" Type="Self.EducationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EducationDetails">
+        <PropertyRef Name="DetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExprienceDetail_Details">
+    <End Role="Details" Type="Self.Detail" Multiplicity="1" />
+    <End Role="ExprienceDetail" Type="Self.ExprienceDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExprienceDetail">
+        <PropertyRef Name="DetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfessionalDetail_Details">
+    <End Role="Details" Type="Self.Detail" Multiplicity="1" />
+    <End Role="ProfessionalDetail" Type="Self.ProfessionalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProfessionalDetail">
+        <PropertyRef Name="DetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfessionalDetail_File">
+    <End Role="File" Type="Self.File" Multiplicity="0..1" />
+    <End Role="ProfessionalDetail" Type="Self.ProfessionalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProfessionalDetail">
+        <PropertyRef Name="FileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DemoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BankDetails" EntityType="Self.BankDetail" />
+    <EntitySet Name="CurrentStatus" EntityType="Self.CurrentStatu" />
+    <EntitySet Name="Details" EntityType="Self.Detail" />
+    <EntitySet Name="EducationDetails" EntityType="Self.EducationDetail" />
+    <EntitySet Name="ExprienceDetails" EntityType="Self.ExprienceDetail" />
+    <EntitySet Name="Files" EntityType="Self.File" />
+    <EntitySet Name="ProfessionalDetails" EntityType="Self.ProfessionalDetail" />
+    <EntitySet Name="Skills" EntityType="Self.Skill" />
+    <AssociationSet Name="FK_BankDetails_Details" Association="Self.FK_BankDetails_Details">
+      <End Role="Details" EntitySet="Details" />
+      <End Role="BankDetails" EntitySet="BankDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CurrentStatus_Details" Association="Self.FK_CurrentStatus_Details">
+      <End Role="Details" EntitySet="Details" />
+      <End Role="CurrentStatus" EntitySet="CurrentStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_File" Association="Self.FK_Details_File">
+      <End Role="File" EntitySet="Files" />
+      <End Role="Details" EntitySet="Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EducationDetails_Details" Association="Self.FK_EducationDetails_Details">
+      <End Role="Details" EntitySet="Details" />
+      <End Role="EducationDetails" EntitySet="EducationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExprienceDetail_Details" Association="Self.FK_ExprienceDetail_Details">
+      <End Role="Details" EntitySet="Details" />
+      <End Role="ExprienceDetail" EntitySet="ExprienceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfessionalDetail_Details" Association="Self.FK_ProfessionalDetail_Details">
+      <End Role="Details" EntitySet="Details" />
+      <End Role="ProfessionalDetail" EntitySet="ProfessionalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfessionalDetail_File" Association="Self.FK_ProfessionalDetail_File">
+      <End Role="File" EntitySet="Files" />
+      <End Role="ProfessionalDetail" EntitySet="ProfessionalDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
