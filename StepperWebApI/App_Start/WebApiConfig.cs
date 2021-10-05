@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace StepperWebApI
 {
@@ -19,6 +16,18 @@ namespace StepperWebApI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //var container = new Container();
+
+            //container.RegisterWebApiRequest<IRepositoryAsync<Category>, Repository<Category>>();
+            //container.RegisterWebApiRequest<ICategoryService, CategoryService>();
+            //container.RegisterWebApiRequest<IDataContextAsync>(() => new MyContext());
+            //container.Verify();
+
+            //config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
+
+
+
         }
     }
 }
