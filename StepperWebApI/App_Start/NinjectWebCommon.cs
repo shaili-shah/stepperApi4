@@ -5,6 +5,7 @@ namespace StepperWebApI.App_Start
 {
     using System;
     using System.Web;
+    using System.Web.Http;
     using Demo.Repository;
     using Demo.Service;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
@@ -41,12 +42,14 @@ namespace StepperWebApI.App_Start
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
+            GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+                
                 return kernel;
             }
             catch

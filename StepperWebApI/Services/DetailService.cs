@@ -474,7 +474,6 @@ namespace Demo.Service
             return true;
         }
 
-
         #endregion
 
         #region Delete
@@ -544,8 +543,13 @@ namespace Demo.Service
                     if (file != null) fileRepository.Delete(detail.File);
                 }
                 detailRepository.Delete(detail);
+                return true;
             }
-            return true;
+            else
+            {
+                return false;
+            }
+           
         }
 
         #endregion

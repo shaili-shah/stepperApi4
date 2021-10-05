@@ -386,6 +386,7 @@
     <Compile Include="Models\ProfessionalDetailModel.cs" />
     <Compile Include="Models\TeamDetailModel.cs" />
     <Compile Include="Models\TeamModel.cs" />
+    <Compile Include="NinjectResolver.cs" />
     <Compile Include="ProfessionalDetail.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>

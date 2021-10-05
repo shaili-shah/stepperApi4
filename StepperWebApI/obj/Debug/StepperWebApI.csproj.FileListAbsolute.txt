@@ -97,6 +97,8 @@ C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\Newt
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\Ninject.dll
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\Ninject.Web.Common.dll
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\Ninject.Web.Mvc.dll
+C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\SimpleInjector.dll
+C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\SimpleInjector.Integration.WebApi.dll
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\Swashbuckle.Core.dll
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\System.Buffers.dll
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\System.ComponentModel.Annotations.dll
@@ -162,6 +164,8 @@ C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\Micr
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\Ninject.xml
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\Ninject.Web.Common.xml
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\Ninject.Web.Mvc.xml
+C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\SimpleInjector.xml
+C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\SimpleInjector.Integration.WebApi.xml
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\System.Buffers.xml
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\System.Memory.xml
@@ -188,8 +192,4 @@ C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\obj\Debu
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\obj\Debug\StepperWebApI.csproj.CopyComplete
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\obj\Debug\StepperWebApI.dll
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\obj\Debug\StepperWebApI.pdb
-C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\SimpleInjector.dll
-C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\SimpleInjector.Integration.WebApi.dll
-C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\SimpleInjector.xml
-C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\SimpleInjector.Integration.WebApi.xml
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\obj\Debug\StepperWebApI.csproj.AssemblyReference.cache
