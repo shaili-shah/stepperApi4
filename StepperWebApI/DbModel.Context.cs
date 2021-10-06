@@ -22,6 +22,7 @@ namespace StepperWebApI
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Skill>().ToTable("Skill");
             throw new UnintentionalCodeFirstException();
         }
     
