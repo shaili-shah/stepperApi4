@@ -193,3 +193,6 @@ C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\obj\Debu
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\obj\Debug\StepperWebApI.dll
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\obj\Debug\StepperWebApI.pdb
 C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\obj\Debug\StepperWebApI.csproj.AssemblyReference.cache
+C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\System.Web.Cors.dll
+C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\System.Web.Http.Cors.dll
+C:\Users\Albiorix Technology\Desktop\projects\stepperApi4\StepperWebApI\bin\System.Web.Http.Cors.xml

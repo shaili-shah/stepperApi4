@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace StepperWebApI
 {
@@ -17,16 +18,8 @@ namespace StepperWebApI
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            //var container = new Container();
-
-            //container.RegisterWebApiRequest<IRepositoryAsync<Category>, Repository<Category>>();
-            //container.RegisterWebApiRequest<ICategoryService, CategoryService>();
-            //container.RegisterWebApiRequest<IDataContextAsync>(() => new MyContext());
-            //container.Verify();
-
-            //config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
-
-
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
 
         }
     }
